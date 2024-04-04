@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+
+        html, body, div, span, applet, object, iframe,
+             blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        /* Estilos para a barra de navegação */
+        html{
+            width: 100%;
+            height: 100%;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Estilos para os links da barra de navegação */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Estilos para a página principal */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content2 {
+            padding: 30px;
+            background-color: #ddd;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+        }
+
+        .content3 {
+            padding: 30px;
+            background-color: #ddd;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        p{
+            font-weight: bold;
+        }
+    </style>
+</head>
+    <body>
+
+        <!-- Barra de Navegação -->
+        <div class="navbar">
+            <a href="/" class="active">Home</a>s
+            <a href="/relacao1_1.mustache">Relação 1 para 1</a>
+            <a href="/relacao1_x.mustache">Relação 1 para X</a>
+        </div>
+
+        <div class="content">
+            <!-- Seção Sobre Mim -->
+            <div class="content2">
+                <h1>Sobre Mim</h1>
+                <p>Meu nome é fernando e eu estou cursando Engenharia de Software na Infnet. Este projeto
+                tem como objetivo demosntrar aplicações web em interação com o CRUD de objetos
+                foram disponibilizados 2 tipos de interação para o escopo desse projeto, Relação 1 para 1
+                e Relação 1 para muitos, com diferentes temas. Para a criação do projeto foi utilizado
+                Spark Java, com testes em JUNit</p>
+            </div>
+            <!-- Conteúdo da Página Principal -->
+            <div class="content3">
+                <h1>{{pageTitle}}</h1>
+                <p>{{pageContent}}</p>
+            </div>
+
+            <div class="ba">
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Desenvolvido por Fernando Araújo - 2024 <a href="http://"></a></p>
+        </footer>
+    </body>
+</html>
