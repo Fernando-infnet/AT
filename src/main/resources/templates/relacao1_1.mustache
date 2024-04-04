@@ -223,6 +223,17 @@
             font-weight: bold;
         }
 
+        h2{
+            font-weight: normal;
+            width: 50%;
+        }
+
+        .central{
+            display: flex;
+            justify-content: center;
+            align-content: center;;
+        }
+
     </style>
 </head>
 <body>
@@ -307,6 +318,11 @@
 
 <!-- Seção Sobre Mim -->
 <div class="content">
+    <div class="central">
+        <h2>Carros e Placas de carros são relacionados um para um, ambos só possuem uma instância do outro
+        .Nesse formulário é possível adicionar placas à carros que ainda não tem, remover placas de carro e pegar dados
+        que estão associados à placas. Assim como em carros, atualizar carros com seus dados baseado no id, deletar e pegar</h2>
+    </div>
     <h1>Carros</h1>
     <ul class="flex">
         {{#objetos}}

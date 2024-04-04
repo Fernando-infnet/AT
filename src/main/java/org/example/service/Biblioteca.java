@@ -86,7 +86,7 @@ public class Biblioteca {
 
         // Se o autor não existir, cria um novo autor e atualiza a referência
         if (autorExistente == null) {
-            autorExistente = new Autor(autorID, "Nome do Autor");
+            autorExistente = new Autor(autorID, autor.getNome());
             autores.put(autorID, autorExistente);
         }
     }
@@ -102,10 +102,6 @@ public class Biblioteca {
 
         // Verifica se o livro já existe na lista de livros
         int livroID = livro.getLivroID();
-        if (livros.containsKey(livroID)) {
-            System.out.println("Livro com ID " + livroID + " já existe na biblioteca.");
-            return;
-        }
 
         // Obtém o autor do livro, se existir
         Autor autorExistente = autores.get(autorID);

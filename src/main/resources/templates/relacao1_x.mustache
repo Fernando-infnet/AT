@@ -134,6 +134,17 @@
             transition: background-color 0.3s;
         }
 
+        h2{
+            font-weight: normal;
+            width: 50%;
+        }
+
+        .central{
+            display: flex;
+            justify-content: center;
+            align-content: center;;
+        }
+
         button:hover{
             background-color: #2e6c31;
         }
@@ -288,6 +299,12 @@
 
 <!-- Seção de Livros -->
 <div class="content">
+    <div class="central">
+        <h2>Livros e Autores possuem uma relação um para muitos, ou seja, nesse caso, um
+        autor pertence à vários livros, e um livro sempre pertence à um autor. Nesse código,
+        podemos criar instâncias de ambas as classes e fazer com que seja possível resgatar
+        os dados, alterações feitas em livro afetam autor, e autor afeta livro</h2>
+    </div>
     <h1>Livros</h1>
     <ul class="flex">
         {{#livros}}

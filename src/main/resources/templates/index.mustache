@@ -56,9 +56,17 @@
         .content {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
             width: 100%;
             height: 100%;
+        }
+
+        .ba{
+            background-color: #ddd;
+            height: 900px;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 0;
         }
 
         .content2 {
@@ -89,7 +97,8 @@
         }
 
         p{
-            font-weight: bold;
+            font-style: italic;
+            font-size: larger;
         }
     </style>
 </head>
@@ -104,22 +113,20 @@
 
         <div class="content">
             <!-- Seção Sobre Mim -->
-            <div class="content2">
-                <h1>Sobre Mim</h1>
-                <p>Meu nome é fernando e eu estou cursando Engenharia de Software na Infnet. Este projeto
-                tem como objetivo demosntrar aplicações web em interação com o CRUD de objetos
-                foram disponibilizados 2 tipos de interação para o escopo desse projeto, Relação 1 para 1
-                e Relação 1 para muitos, com diferentes temas. Para a criação do projeto foi utilizado
-                Spark Java, com testes em JUNit</p>
-            </div>
-            <!-- Conteúdo da Página Principal -->
-            <div class="content3">
-                <h1>{{pageTitle}}</h1>
-                <p>{{pageContent}}</p>
-            </div>
-
             <div class="ba">
-
+                <div class="content2">
+                    <h1>Sobre Mim</h1>
+                    <p>Meu nome é fernando e eu estou cursando Engenharia de Software na Infnet. Este projeto
+                    tem como objetivo demosntrar aplicações web em interação com o CRUD de objetos
+                    foram disponibilizados 2 tipos de interação para o escopo desse projeto, Relação 1 para 1
+                    e Relação 1 para muitos, com diferentes temas. Para a criação do projeto foi utilizado
+                    Spark Java, com testes em JUNit</p>
+                </div>
+                <!-- Conteúdo da Página Principal -->
+                <div class="content3">
+                    <h1>{{pageTitle}}</h1>
+                    <p>{{pageContent}}</p>
+                </div>
             </div>
         </div>
 
