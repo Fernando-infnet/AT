@@ -2,14 +2,12 @@ package org.example.model;
 
 public class Livro {
     private int livroID;
-    private String nome;
-    private String editora;
+    private String nomeLivro;
     private int autorID;
 
-    public Livro(int livroID, String nome, String editora, int autorID) {
+    public Livro(int livroID, String nomeLivro, int autorID) {
         this.livroID = livroID;
-        this.nome = nome;
-        this.editora = editora;
+        this.nomeLivro = nomeLivro;
         this.autorID = autorID;
     }
 
@@ -23,24 +21,14 @@ public class Livro {
         this.livroID = livroID;
     }
 
-    // Método getter para nome
-    public String getNome() {
-        return nome;
+    // Método getter para nomeLivro
+    public String getNomeLivro() {
+        return nomeLivro;
     }
 
-    // Método setter para anoPublicacao
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    // Método getter para editora
-    public String getEditora() {
-        return editora;
-    }
-
-    // Método setter para editora
-    public void setEditora(String editora) {
-        this.editora = editora;
+    // Método setter para nomeLivro
+    public void setNome(String nomeLivro) {
+        this.nomeLivro = nomeLivro;
     }
 
     // Método getter para autorID

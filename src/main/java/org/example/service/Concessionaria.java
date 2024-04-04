@@ -130,7 +130,23 @@ public class Concessionaria {
     }
 
     public PlacaCarro removerPlacaCarro(Integer id) {
-        return placasCarro.remove(id);
+        Carro carro = null;
+        // Encontrar o carro associado ao ID
+        for (Carro c : carros.values()) {
+            if (c.getIdPlaca() != null && c.getIdPlaca() == id) {
+                carro = c;
+                break;
+            }
+        }
+
+        // Se o carro for encontrado, remover a placa
+        if (carro != null) {
+            carro.setIdPlaca(null); // Remover a referência da placa do carro
+            return placasCarro.remove(id); // Remover a placa
+        } else {
+            System.out.println("Carro com ID da placa " + id + " não encontrado.");
+            return null;
+        }
     }
 
 

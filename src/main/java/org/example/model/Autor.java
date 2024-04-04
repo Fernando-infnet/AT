@@ -1,17 +1,19 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Autor {
     private int autorID;
     private String nome;
-    private String cpf;
-    private Boolean vivo;
+    private List<Livro> livros;
 
     // Construtor
-    public Autor(Integer autorID,String nome, String cpf, Boolean vivo) {
+
+    public Autor(int autorID,String nome) {
         this.autorID = autorID;
         this.nome = nome;
-        this.cpf = cpf;
-        this.vivo = vivo;
+        this.livros = new ArrayList<>();
     }
 
     // Métodos Getters e Setters
@@ -31,19 +33,22 @@ public class Autor {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public List<Livro> getLivros() {
+        return livros;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void adicionarLivro(Livro livro) {
+        livros.add(livro);
     }
-
-    public Boolean getVivo() {
-        return vivo;
+    public void removerLivro(Livro livro) {
+        livros.remove(livro);
     }
-
-    public void setNacionalidade(Boolean vivo) {
-        this.vivo = vivo;
+    public Livro obterLivro(int livroID) {
+        for (Livro livro : livros) {
+            if (livro.getLivroID() == livroID) {
+                return livro;
+            }
+        }
+        return null;
     }
 }

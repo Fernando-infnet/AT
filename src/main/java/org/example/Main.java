@@ -7,8 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.example.controller.BibliotecaController;
 import org.example.model.Carro;
 import org.example.model.PlacaCarro;
+import org.example.service.Biblioteca;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 import org.example.controller.ConcessionariaController;
@@ -25,6 +27,9 @@ public class Main {
         // Instanciar a concessionária e o controller
         Concessionaria concessionaria = new Concessionaria();
         ConcessionariaController concessionariaController = new ConcessionariaController(concessionaria);
+
+        Biblioteca biblioteca = new Biblioteca();
+        BibliotecaController bibliotecaController = new BibliotecaController(biblioteca);
 
         // Define a rota para a página inicial
         get("/", (request, response) -> {
@@ -58,6 +63,19 @@ public class Main {
 
         get("/relacao1_x.mustache",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
+
+            // Cria listas separadas para livros e autores
+            List<Object> livros = new ArrayList<>();
+            List<Object> autores = new ArrayList<>();
+
+            // Adiciona os livros à lista de livros
+            livros.addAll(Biblioteca.getLivros().values());
+
+            // Adiciona os autores à lista de autores
+            autores.addAll(Biblioteca.getAutores().values());
+
+            model.put("livros", livros);
+            model.put("autores", autores);
 
             return templateEngine.render(new ModelAndView(model, "relacao1_x.mustache"));
         });
